@@ -22,6 +22,8 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
+            - name: DB_URL
+              value: jdbc:mysql://host.docker.internal/petclinic
 ---
 apiVersion: v1
 kind: Service
