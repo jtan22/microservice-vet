@@ -28,10 +28,9 @@ kind: Service
 metadata:
   name: microservice-vet
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 8080
       targetPort: 8084
-      nodePort: 30084
   selector:
     app: microservice-vet
