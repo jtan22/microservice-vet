@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,7 @@ public class VetController {
     @GetMapping("/vets")
     public Page<Vet> findAll(@RequestParam(value = "pageNumber", defaultValue = "0") int pageNumber,
                              @RequestParam(value = "pageSize", defaultValue = "3") int pageSize) {
-        log.info("GET findAll pageNumber [" + pageNumber + "], pageSize [" + pageSize + "]");
+        log.info("GET findAll pageNumber [{}], pageSize [{}]", pageNumber, pageSize);
         return vetRepository.findAll(PageRequest.of(pageNumber, pageSize));
     }
 
