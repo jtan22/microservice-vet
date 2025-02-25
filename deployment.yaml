@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: microservice-vet
-          image: jtan22/microservice-vet:latest
+          image: jtan22/microservice-vet:${PROJECT_VERSION}
           ports:
             - containerPort: 8080
           env:
